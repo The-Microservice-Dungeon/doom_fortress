@@ -1,0 +1,28 @@
+require 'kafka'
+require 'doom_fortress/message_handler'
+
+kafka = Kafka.new(['localhost:29092'])
+
+# Consumers with the same group id will form a Consumer Group together.
+consumer = kafka.consumer(group_id: 'doom-fortress')
+
+# It's possible to subscribe to multiple topics by calling `subscribe`
+# repeatedly.
+consumer.subscribe('gameworld-created')
+
+# Stop the consumer when the SIGTERM signal is sent to the process.
+# It's better to shut down gracefully than to kill the process.
+trap('TERM') { consumer.stop }
+
+# This will loop indefinitely, yielding each message in turn.
+consumer.each_message do |message|
+  Thread.new do
+    DoomFortress::MessageHandler.handle_message(message)
+  end
+end
+
+
+
+start docker-compose -f kafkabroker.yml up for docker
+start map with rails s -p 4001
+start scoreboard with rails s
