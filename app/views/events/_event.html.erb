@@ -1,4 +1,4 @@
-<div id="<%= dom_id event %>">
+<div id="<%= dom_id event %>" class="bg-gray-500 max-w-md rounded-lg min-w-[50%] m-2 px-1">
   <p class="my-5">
     <strong class="block font-medium mb-1">Event:</strong>
     <%= event.event_id %>
@@ -25,8 +25,8 @@
   </p>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this event", event, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this event', edit_event_path(event), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+  <%= link_to "Show this event", event, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to 'Edit this event', edit_event_path(event), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+  <hr class="mt-6">
   <% end %>
 </div>
