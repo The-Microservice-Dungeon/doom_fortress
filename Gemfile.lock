@@ -91,6 +91,10 @@ GEM
     digest-crc (0.6.4)
       rake (>= 12.0.0, < 14.0.0)
     erubi (1.10.0)
+    faraday (2.0.1)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -176,6 +180,7 @@ GEM
     rexml (3.2.5)
     ruby-kafka (1.4.0)
       digest-crc
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
@@ -227,6 +232,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  faraday
   importmap-rails
   jbuilder
   puma (~> 5.0)
