@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_105248) do
+ActiveRecord::Schema.define(version: 2022_01_10_145313) do
 
   create_table "events", force: :cascade do |t|
     t.string "event_id"
@@ -18,11 +18,6 @@ ActiveRecord::Schema.define(version: 2022_01_11_105248) do
     t.string "timestamp"
     t.string "event_type"
     t.text "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "scoreboards", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
