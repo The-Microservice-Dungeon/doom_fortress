@@ -55,6 +55,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def game_time
+    render json: DoomFortress::GameService.get_game_time()
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

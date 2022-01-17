@@ -1,0 +1,2 @@
+class GameTime < ApplicationRecord
+end
