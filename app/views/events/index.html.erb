@@ -12,5 +12,8 @@
     <%= render @events %>
   </div>
   <div id="gametime">
+    <%= turbo_stream_from "game_time" %>
+    <%= render @game_times %>
+    
   </div>
 </div>

@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(game_time) do %>
+    <span class='ticker'> <%= game_time.time %> </span>
+    <span class='ticker'> <%= game_time.round_count %> </span>
+    <span class='ticker'> <%= game_time.round_time %> </span>
+<% end %>

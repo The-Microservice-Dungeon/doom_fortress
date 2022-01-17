@@ -4,7 +4,7 @@ require 'faraday'
 module DoomFortress
   class GameService
     def self.get_game_time()
-      response = Faraday.get("http://#{default_host()}/games/#{get_running_game_id()}/time")
+      #response = Faraday.get("http://#{default_host()}/games/#{get_running_game_id()}/time")
       return  {"gameTime" => 183, "roundCount" => 4, "roundTime" => rand(60)} #JSON.parse(response.body)
     end
     def self.default_host()
