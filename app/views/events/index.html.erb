@@ -1,19 +1,20 @@
-<div class="w-full p-0 m-0">
+<div class='border-b-2 flex justify-center'>
+  <div class='flex flex-column'>
+    <%= turbo_stream_from "game_time" %>
+    <%= render @game_times %>
+  </div>
+</div>
+<div class="w-full p-0 m-0 mx-auto h-full">
   <% if notice.present? %>
   <p class="bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Events</h1>
-    <%= link_to 'New event', new_event_path, class: "rounded-lg py-1 px-1 bg-blue-600 text-white block font-medium" %>
+    <%= link_to 'New event', new_event_path, class: "rounded-lg py-1 px-1 bg-orange-600 text-white block font-medium" %>
   </div>
 
   <div id="events" class="min-w-full flex flex-wrap">
     <%= render @events %>
-  </div>
-  <div id="gametime">
-    <%= turbo_stream_from "game_time" %>
-    <%= render @game_times %>
-    
   </div>
 </div>

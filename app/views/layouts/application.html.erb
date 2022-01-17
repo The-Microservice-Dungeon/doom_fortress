@@ -3,6 +3,7 @@
   <head>
     <title>DoomFortress</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="http://fonts.cdnfonts.com/css/doom-2016-left" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -11,8 +12,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class='bg-doom-9000'>
+    <main class="text-gray-100 ">
       <%= yield %>
     </main>
   </body>
