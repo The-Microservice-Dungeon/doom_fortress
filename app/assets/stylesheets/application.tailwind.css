@@ -11,3 +11,14 @@
 }
 
 */
+@import 'actiontext.css';
+
+.font-doom {
+  font-family: 'Doom 2016 Left', sans-serif;
+}
+.bg-doom-9000 {
+  background-color: #1F1F21;
+}
+.bg-orange-600 {
+  background-color: #DB7500;
+}
