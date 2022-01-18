@@ -1,24 +1,27 @@
-# README
+<h1 align="center">
+  🏰 DooM Fortress
+</h1>
+<p align="center">A Dashboard for the <a href="https://the-microservice-dungeon.github.io/docs/">Microservice Dungeon game</a></p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> "Warning: the Slayer has entered the facility."
 
-Things you may want to cover:
+Authors:
 
-* Ruby version
+- 🧙‍♂️ [Daniel Khaapamyaki](https://github.com/daskycodes) - Dungeon Master
+- [Tristan Steffen](https://github.com/Tristan-Steffen) - Hof Narr
+- [Lara Neuburg](https://github.com/laralou) - Dungeon Master
+- 🕵️‍♂️ [Valerij Leis](https://github.com/Valle4269) - DooM Guy
+- [Jonas Marowski](https://github.com/naskichan) - Yeeet
+## Requirements
 
-* System dependencies
+- Ruby 3.0.2 & Rails 7.0.1
+  To install Ruby on Rails see [here](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
 
-* Configuration
+## Run 
 
-* Database creation
+- bundle install
+- rails db:migrate
+- rails s
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+you are ready. Server aviable on http://localhost:3000
+See route http://localhost:3000/events for the dashboard.
