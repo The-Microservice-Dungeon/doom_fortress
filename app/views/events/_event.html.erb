@@ -1,32 +1,18 @@
-<div id="<%= dom_id event %>" class="bg-gray-500 max-w-md rounded-lg min-w-[50%] m-2 px-1">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Event:</strong>
-    <%= event.event_id %>
-  </p>
+<%= turbo_frame_tag dom_id(event) do %>
+  <div class='bg-gray-500 max-w-md rounded-lg min-w-[50%] m-2 px-1'>
+    <div class='flex flex-row'>
+      <img class='max-w-[25%] p-4' src="/images/robot.png" alt="robot">
+      <img class='max-w-[25%] p-4' src="/images/<%= event.topic %>.png" alt="<%= event.topic %>">
+      <img class='max-w-[25%] p-4' src="/images/robot.png" alt="robot">
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Topic:</strong>
-    <%= event.topic %>
-  </p>
+      <div class='flex flex-col justify-around'>
+        <% if action_name != "show" %>
+          <%= link_to "Show this event", event, class: "rounded-lg bg-gray-100 text-black font-medium p-1 m-1" %>
+          <%= link_to 'Edit this event', edit_event_path(event), class: "rounded-lg bg-gray-100 text-black font-medium p-1 m-1" %>
+        <% end %>
+      </div>
+    </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Timestamp:</strong>
-    <%= event.timestamp %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Type:</strong>
-    <%= event.event_type %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Value:</strong>
-    <%= event.value %>
-  </p>
-
-  <% if action_name != "show" %>
-  <%= link_to "Show this event", event, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to 'Edit this event', edit_event_path(event), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-  <hr class="mt-6">
-  <% end %>
-</div>
+    
+  </div>
+<% end %>
