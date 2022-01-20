@@ -14,6 +14,7 @@
     <%= link_to 'New event', new_event_path, class: "rounded-lg py-1 px-1 bg-orange-600 text-white block font-medium" %>
   </div>
 
+  <%= turbo_stream_from "events" %>
   <div id="events" class="min-w-full flex flex-wrap">
     <%= render @events %>
   </div>

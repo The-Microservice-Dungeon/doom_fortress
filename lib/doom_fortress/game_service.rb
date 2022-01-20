@@ -18,5 +18,8 @@ module DoomFortress
       end
       return game["gameId"] unless game.nil?
     end
+    def self.get_event()
+      return {"event_id" => '1337', "topic" => 'Imatopic', "timestamp" => '01011970', "event_type" => 'imaeventtype', "value" => 'This is value :)'}
+    end
   end
 end
