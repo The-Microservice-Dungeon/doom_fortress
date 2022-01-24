@@ -113,6 +113,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    king_konf (1.0.0)
     loofah (2.13.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -123,6 +124,7 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.7.1)
     minitest (5.15.0)
     msgpack (1.4.2)
     net-imap (0.2.3)
@@ -151,6 +153,9 @@ GEM
     puma (5.5.2)
       nio4r (~> 2.0)
     racc (1.6.0)
+    racecar (2.4.0)
+      king_konf (~> 1.0.0)
+      rdkafka (~> 0.10.0)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -181,6 +186,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rdkafka (0.10.0)
+      ffi (~> 1.9)
+      mini_portile2 (~> 2.1)
+      rake (>= 12.3)
     redis (4.5.1)
     regexp_parser (2.2.0)
     reline (0.3.1)
@@ -250,6 +259,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   puma (~> 5.0)
+  racecar
   rails (~> 7.0.1)
   redis (~> 4.0)
   ruby-kafka
