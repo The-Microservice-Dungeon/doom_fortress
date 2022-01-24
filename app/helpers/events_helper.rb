@@ -8,8 +8,8 @@ module EventsHelper
       return {action: "fighting", target: "robot"}
     when"moving"
       return {action: "moving", target: "robot"}
-    when"buying"
-      return {action: "buying", target: "robot"}
+    when"trades"
+      return {action: "trades", target: "robot"}
     when"regeneration"
       return {action: "regeneration", target: "robot"}
     when"blocking"
