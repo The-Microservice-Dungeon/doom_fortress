@@ -15,9 +15,9 @@ module EventsHelper
     when"blocking"
       return {action: "blocking", target: "robot"}
     when"destroyed"
-      return {action: "destroyed", target: "robot"}
+      return {action: "destroyed", target: "robot_dead"}
     else
-      return {action: "unknown", target: "robot"}
+      return {action: "unknown", target: "unknown"}
     end
   end
 end
