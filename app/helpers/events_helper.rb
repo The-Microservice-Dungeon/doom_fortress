@@ -7,7 +7,7 @@ module EventsHelper
     when"fighting"
       return {action: "fighting", target: "robot"}
     when"moving"
-      return {action: "moving", target: "robot"}
+      return {action: "moving", target: "universe"}
     when"trades"
       event_data = event_type.split('-')
       if event_data[0] == 'buy'
