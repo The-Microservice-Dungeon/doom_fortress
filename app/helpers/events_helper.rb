@@ -1,5 +1,5 @@
 module EventsHelper
-  def getTemplate(topic, value)
+  def getTemplate(topic, value, event_type)
     json = JSON.parse(value)
     case topic
     when"mining"
@@ -7,9 +7,14 @@ module EventsHelper
     when"fighting"
       return {action: "fighting", target: "robot"}
     when"moving"
-      return {action: "moving", target: "robot"}
+      return {action: "moving", target: "universe"}
     when"trades"
-      return {action: "trades", target: "robot"}
+      event_data = event_type.split('-')
+      if event_data[0] == 'buy'
+        return {action: "buy", target: event_data[1]}
+      else
+        return {action: "sell", target: event_data[1]}
+      end
     when"regeneration"
       return {action: "regeneration", target: "robot"}
     when"blocking"

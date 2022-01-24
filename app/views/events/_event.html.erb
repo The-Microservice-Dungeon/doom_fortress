@@ -3,8 +3,8 @@
   <div class='flex flex-row'>
     <img class='max-w-[25%] p-4' src="/images/robot.png" alt="robot">
 
-    <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value)[:action] %>.png" alt="<%= event.topic %>">
-    <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value)[:target] %>.png">
+    <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value, event.event_type)[:action] %>.png" alt="<%= event.topic %>">
+    <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value, event.event_type)[:target] %>.png">
 
     <div class='flex flex-col justify-around'>
       <% if action_name != "show" %>
