@@ -2,6 +2,8 @@ module EventsHelper
   def getTemplate(topic, value, event_type)
     json = JSON.parse(value)
     case topic
+    when"status"
+      return {action: json["status"], target: "galaxy"}
     when"mining"
       return {action: "mining", target: json["resourceType"]}
     when"fighting"
@@ -19,10 +21,10 @@ module EventsHelper
       return {action: "regeneration", target: "robot"}
     when"blocking"
       return {action: "blocking", target: "robot"}
-    when"destroyed"
-      return {action: "destroyed", target: "robot_dead"}
+    when"robot-destroyed"
+      return {action: "fighting", target: "robot_dead"}
     else
-      return {action: "unknown", target: "unknown"}
+      return {action: "notfound", target: "notfound"}
     end
   end
 end
