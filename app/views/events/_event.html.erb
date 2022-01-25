@@ -1,19 +1,11 @@
 <%= turbo_frame_tag dom_id(event) do %>
-<div class='bg-gray-500 max-w-md rounded-lg min-w-[50%] m-2 px-1'>
-  <div class='flex flex-row'>
-    <img class='max-w-[25%] p-4' src="/images/robot.png" alt="robot">
-
-    <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value, event.event_type)[:action] %>.png" alt="<%= event.topic %>">
-    <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value, event.event_type)[:target] %>.png">
-
-    <div class='flex flex-col justify-around'>
-      <% if action_name != "show" %>
-      <%= link_to "Show this event", event, class: "rounded-lg bg-gray-100 text-black font-medium p-1 m-1" , data: { turbo: false }%>
-      <%= link_to 'Edit this event', edit_event_path(event), class: "rounded-lg bg-gray-100 text-black font-medium p-1 m-1" , data: { turbo: false }%>
-      <% end %>
+  <%= link_to event, data: { turbo: false } do %>
+    <div class='bg-gray-500 max-w-md rounded-lg min-w-[50%] m-2 px-1'>
+      <div class='flex flex-row justify-around'>
+        <img class='max-w-[25%] p-4' src="/images/robot_alive.png" alt="robot">
+        <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value, event.event_type)[:action] %>.png" alt="<%= event.topic %>">
+        <img class='max-w-[25%] p-4' src="/images/<%= getTemplate(event.topic, event.value, event.event_type)[:target] %>.png">
+      </div>
     </div>
-  </div>
-
-
-</div>
+  <% end %>
 <% end %>
