@@ -3,28 +3,28 @@ module EventsHelper
     json = JSON.parse(value)
     case topic
     when"status"
-      return {action: json["status"], target: "galaxy"}
+      return {source: "jesus", action: json["status"], target: "galaxy"}
     when"mining"
-      return {action: "mining", target: json["resourceType"]}
+      return {source: "robot_alive", action: "mining", target: json["resourceType"]}
     when"fighting"
-      return {action: "fighting", target: "robot"}
+      return {source: "robot_alive", action: "fighting", target: "robot"}
     when"moving"
-      return {action: "moving", target: "universe"}
+      return {source: "robot_alive", action: "moving", target: "universe"}
     when"trades"
       event_data = event_type.split('-')
       if event_data[0] == 'buy'
-        return {action: "buy", target: event_data[1]}
+        return {source: "player", action: "buy", target: event_data[1]}
       else
-        return {action: "sell", target: event_data[1]}
+        return {source: "player", action: "sell", target: event_data[1]}
       end
     when"regeneration"
-      return {action: "regeneration", target: "robot"}
+      return {source: "robot_alive", action: "regeneration", target: "robot"}
     when"blocking"
-      return {action: "blocking", target: "robot"}
+      return {source: "robot_alive", action: "blocking", target: "robot"}
     when"robot-destroyed"
-      return {action: "fighting", target: "robot_dead"}
+      return {source: "robot_alive", action: "fighting", target: "robot_dead"}
     else
-      return {action: "notfound", target: "notfound"}
+      return {source: "robot_alive", action: "notfound", target: "notfound"}
     end
   end
 end
